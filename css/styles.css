@@ -398,6 +398,10 @@ body {
   font-size: .9rem;
 }
 
+.navbar__menu--mobile .navbar__link:hover {
+  color: #9095a7;
+}
+
 @media (min-width: 64rem) {
   .navbar__menu--mobile {
     display: none;
@@ -544,7 +548,9 @@ body {
 }
 
 .hero__image {
+  display: block;
   max-width: 100%;
+  margin: 0 auto;
 }
 
 .features {
@@ -655,13 +661,24 @@ body {
 }
 
 .testimonials__container {
-  padding: 4rem 0 2rem;
+  padding: 6rem 0 2rem;
   overflow-x: hidden;
 }
 
 @media (min-width: 48rem) {
-  .testimonials__container {
-    overflow: initial;
+  .testimonials__container--mobile {
+    display: none;
+  }
+}
+
+.testimonials__container--tablet {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .testimonials__container--tablet {
+    display: block;
+    overflow: inherit;
   }
 }
 
@@ -672,12 +689,6 @@ body {
   display: flex;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
-}
-
-@media (min-width: 48rem) {
-  .testimonials__slider {
-    width: 100%;
-  }
 }
 
 .testimonials__slider-buttons {
@@ -745,12 +756,20 @@ body {
 
 @media (min-width: 48rem) {
   .card {
-    -ms-flex-preferred-size: 25rem;
-        flex-basis: 25rem;
+    -ms-flex-preferred-size: 27rem;
+        flex-basis: 27rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
     margin-right: 1rem;
   }
+}
+
+.splide__arrows, .splide__pagination {
+  display: none !important;
+}
+
+.splide__track {
+  overflow: inherit !important;
 }
 
 .banner {
@@ -853,6 +872,13 @@ body {
   .footer__socmed-link {
     margin: 0 .5rem;
   }
+}
+
+.footer__sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
 }
 
 .footer__socmed-logo {

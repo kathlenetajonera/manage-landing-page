@@ -1,0 +1,13 @@
+.splide {
+    &__arrows, &__pagination {
+        display: none !important;
+    }
+
+    &__track {
+        overflow: inherit !important;
+    }
+
+    // &__slide {
+    //     margin-right: 1rem !important;
+    // }
+}

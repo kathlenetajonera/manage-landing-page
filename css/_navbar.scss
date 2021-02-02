@@ -76,6 +76,10 @@
             #{ $self }__link {
                 @include link-text(db);
                 font-size: .9rem;
+
+                &:hover {
+                    color: $darkGrayishBlue;
+                }
             }
 
             @include media-query(desktop-sm) {
