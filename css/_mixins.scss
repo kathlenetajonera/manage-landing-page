@@ -1,0 +1,45 @@
+$mediaBreakpoints: (
+    mobile: 23.4375rem,
+    tablet: 48rem,
+    desktop-sm: 64rem,
+    desktop-lg: 81rem
+);
+
+@mixin media-query($size) {
+    @media (min-width: map-get($mediaBreakpoints, $size)) {
+        @content;
+    }
+}
+
+@mixin reset-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin heading-text {
+    font-family: $font-family;
+    color: $darkBlue;
+    margin: 0;
+}
+
+@mixin body-text($font-size) {
+    font-family: $font-family;
+    font-size: $font-size;
+    color: $darkGrayishBlue;
+    line-height: 1.7rem;
+}
+
+@mixin link-text($color) {
+    text-decoration: none;
+    font-family: $font-family;
+    font-weight: 500;
+
+    @if $color == vlg {
+        color: $veryLightGray;
+    } @else if $color == db {
+        color: $darkBlue;
+    } @else if $color == br {
+        color: $brightRed;
+    }
+}

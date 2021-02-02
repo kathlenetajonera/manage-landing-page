@@ -1,0 +1,81 @@
+.features {
+    padding: 2rem 1rem;
+    position: relative;
+
+    @include media-query(tablet) {
+        padding: 4rem 2rem;
+
+        &::after {
+            content: url("/images/bg-tablet-pattern.svg");
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translate(-60%, 50%) scale(.8);
+            z-index: -1;
+        }
+    }
+
+    @include media-query(desktop-sm) {
+        padding: 4rem 3rem;
+    }
+
+    &__item {
+        margin-bottom: 3rem;
+    }
+
+    &__number {
+        padding: .6rem 1.5rem;
+        background-color: $brightRed;
+        border-radius: 2rem;
+        font-family: $font-family;
+        font-weight: 700;
+        color: $white;
+        display: inline-block;
+    }
+
+    &__title {
+        @include heading-text();
+        font-size: 0.99rem;
+        display: inline-block;
+        padding: .6rem;
+        position: relative;
+
+        @include media-query(tablet) {
+            font-size: .92rem;
+            padding: .6rem 0 .6rem 1.5rem;
+        }
+
+        @include media-query(desktop-sm) {
+            font-size: 1rem;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-5%, -50%);
+            background-color: $veryPaleRed;
+            width: 500%;
+            height: 100%;
+            z-index: -1;
+
+            @include media-query(tablet) {
+                display: none;
+            }
+        }
+    }
+
+    &__text {
+        @include body-text(.9rem);
+
+        @include media-query(tablet) {
+            padding-left: 5.9rem;
+        }
+
+        @include media-query(desktop-sm) {
+            font-size: 1rem;
+            width: Min(30rem, 100%);
+        }
+    }
+}

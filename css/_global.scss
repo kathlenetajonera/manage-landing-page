@@ -1,0 +1,223 @@
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    box-sizing: inherit;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    line-height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.grid {
+    display: grid;
+
+    &--two-col {
+        grid-gap: 2rem;
+        width: Min(68rem, 100%);
+        margin: 0 auto;
+
+        @include media-query(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &--four-col {
+        width: Min(68rem, 100%);
+        margin: 0 auto;
+
+        @include media-query(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+        }
+
+        @include media-query(desktop-sm) {
+            grid-template-columns: 1.5fr repeat(2, 2fr);
+        }
+    }
+}
+
+.heading {
+    text-align: center;
+
+    @include media-query(tablet) {
+        text-align: left;
+    }
+
+    &--second-order {
+        order: 1;
+
+        @include media-query(tablet) {
+            order: 0;
+            align-self: center;
+        }
+    }
+
+    &__title {
+        @include heading-text();
+        line-height: 3rem;
+
+        @include media-query(desktop-sm) {
+            width: Min(29rem, 100%);
+        }
+
+        &--hero {
+            font-size: 2.3rem;
+
+            @include media-query(desktop-sm) {
+                font-size: 3.3rem;
+                line-height: 4rem;
+            }
+        }
+
+        &--section {
+            font-size: 2rem;
+        }
+
+        &--section-c {
+            text-align: center;
+            width: 100%;
+        }
+
+        &--banner {
+            font-size: 2.3rem;
+            color: $white;
+        }
+    }
+
+    &__subtext {
+        @include body-text(1rem);
+
+        @include media-query(desktop-sm) {
+            width: Min(21rem, 100%);
+        }
+
+        &--section {
+            font-size: .9rem;
+            padding: 0 1rem;
+
+            @include media-query(tablet) {
+                padding: 0;
+            }
+
+            @include media-query(desktop-sm) {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.button {
+    font-size: .8rem;
+    padding: .8rem 1.8rem;
+    border-radius: 2rem;
+    display: inline-block;
+    margin: 1rem 0;
+    cursor: pointer;
+
+    &--primary {
+        @include link-text(vlg);
+        background: $brightRed;
+        box-shadow: 0 0.25rem 0.625rem 0 $boxShadow;
+
+        &:hover {
+            background: $buttonHover;
+        }
+    }
+
+    &--secondary {
+        @include link-text(br);
+        background: $white;
+        width: fit-content;
+        margin: 0 auto;
+        align-self: center;
+
+        &:hover {
+            color: $buttonHover;
+        }
+
+        @include media-query(tablet) {
+            margin: 0 0 0 auto;
+        }
+        //box-shadow: 0 0.25rem 0.625rem 0 $boxShadow;
+    }
+    
+    &--form {
+        margin: 0;
+        outline: none;
+        border: none;
+        background: $brightRed;
+        color: $veryLightGray;
+        font-weight: 700;
+
+        &:hover {
+            background: $buttonHover;
+        }
+    }
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: start;
+    position: relative;
+
+    @include media-query(tablet) {
+        order: 2;
+        grid-column: span 2;
+    }
+
+    @include media-query(desktop-sm) {
+        grid-column: initial;
+        margin-bottom: 0;
+    }
+
+    &__email {
+        border: none;
+        outline: none;
+        background: $white;
+        padding: .8rem 1.5rem;
+        border-radius: 2rem;
+        border: 1px solid transparent;
+        font-family: $font-family;
+        font-size: .7rem;
+        width: 100%;
+
+        &::placeholder {
+            color: $darkGrayishBlue;
+        }
+
+        &--error {
+            border: 1px solid $brightRed;
+            color: $brightRed;
+        }
+
+        &--valid {
+            border: 1px solid $green;
+        }
+    }
+
+    &__result {
+        font-family: $font-family;
+        font-size: .7rem;
+        font-style: italic;
+        margin: 0.1875rem 0 0 1.5rem;
+        position: absolute;
+
+        &--error {
+            color: $brightRed;
+        }
+
+        &--valid {
+            color: $green;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.banner {
+    padding: 5rem 2rem;
+    background-color: $brightRed;
+    text-align: center;
+    position: relative;
+    background-image: url("/images/bg-simplify-section-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    @include media-query(tablet) {
+        background-image: url("/images/bg-simplify-section-desktop.svg");
+        background-position: center bottom;
+    }
+
+    @include media-query(desktop-sm) {
+        padding: 4rem 3rem;
+    }
+
+    @include media-query(desktop-lg) {
+        background-position: -200% bottom;
+    } 
+}

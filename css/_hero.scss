@@ -1,0 +1,47 @@
+.hero {
+    padding: 0 2rem 4rem;
+    position: relative;
+    //z-index: -1;
+
+    @include media-query(tablet) {
+        padding: 4rem 2rem;
+    }
+
+    @include media-query(desktop-sm) {
+        padding: 4rem 3rem;
+    }
+
+    &::before {
+        content: url("/images/bg-tablet-pattern.svg");
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(45%, -50%) scale(.6);
+        z-index: -1;
+
+        @include media-query(tablet) {
+            transform: translate(45%, -50%) scale(.8);
+        }
+
+        @include media-query(desktop-sm) {
+            transform: translate(40%, -50%) scale(1);
+        }
+    }
+
+    &::after {
+        content: url("/images/bg-tablet-pattern.svg");
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(54%, 30%) scale(0.4);
+        z-index: -1;
+
+        @include media-query(tablet) {
+            display: none;
+        }
+    }
+
+    &__image {
+        max-width: 100%;
+    }
+}

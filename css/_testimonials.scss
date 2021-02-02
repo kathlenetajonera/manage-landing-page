@@ -1,0 +1,79 @@
+.testimonials {
+    padding: 2rem 1rem;
+    text-align: center;
+
+    &__container {
+        padding: 4rem 0 2rem;
+        overflow-x: hidden;
+        
+        @include media-query(tablet) {
+            overflow: initial;
+            // width: 25rem;
+            // margin: 0 auto;
+        }
+    }
+
+    &__slider {
+        width: 400%;
+        display: flex;
+        transition: .5s ease-in-out;
+
+        @include media-query(tablet) {
+            width: 100%;
+        }
+    }
+
+    &__slider-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+
+        @include media-query(tablet) {
+            display: none;
+        }
+    }
+
+    &__slider-indicator {
+        width: 0.7rem;
+        height: 0.7rem;
+        border: 0.125rem solid $brightRed;
+        border-radius: 50%;
+        margin: 0 .125rem;
+        cursor: pointer;
+
+        &--active {
+            background: $brightRed;
+        }
+    }
+}
+
+.card {
+    background-color: $veryLightGray;
+    padding: 3rem 1rem 1rem;
+    border-radius: .25rem;
+    position: relative;
+    flex-basis: 100%;
+
+    &__author-image {
+        max-width: 4.5rem;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__author-name {
+        @include heading-text();
+    }
+
+    &__review {
+        @include body-text(.85rem);
+    }
+
+    @include media-query(tablet) {
+        flex-basis: 25rem;
+        flex-shrink: 0;
+        margin-right: 1rem;
+    }
+}

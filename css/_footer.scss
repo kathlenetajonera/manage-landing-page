@@ -1,0 +1,127 @@
+.footer {
+    padding: 3rem 2rem;
+    background-color: $veryDarkBlue;
+    position: relative;
+    $self: &;
+
+    @include media-query(desktop-sm) {
+        padding: 3rem;
+    }
+
+    &__logo-socmed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 2;
+
+        @include media-query(tablet) {
+            order: 0;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo-link {
+        order: 1;
+        margin-top: 3rem;
+
+        @include media-query(tablet) {
+            order: 0;
+            margin: 0;
+        }
+    }
+
+    &__logo {
+        display: block;
+    }
+
+    &__socmed-link {
+        margin: 0 1rem;
+        display: inline-block;
+
+        @include media-query(tablet) {
+            margin: 0 .5rem;
+        }
+    }
+
+    &__socmed-logo {
+        display: block;
+        transform: scale(1.5);
+
+        &:hover #{ $self }__socmed-logo-path {
+            fill: $brightRed;
+        }
+
+        @include media-query(tablet) {
+            transform: none;
+        }
+    }
+
+    &__menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 2rem 0;
+        order: 1;
+
+        @include media-query(tablet) {
+            order: 1;
+            margin: 0;
+        }
+    }
+
+    &__list {
+        @include reset-list();
+    }
+
+    &__item {
+        padding: .5rem 0;
+    }
+
+    &__link {
+        @include link-text(vlg);
+        font-size: .9rem;
+        font-weight: 400;
+
+        &:hover {
+            color: $brightRed;
+        }
+    }
+
+    &__copyright {
+        @include body-text(.8rem);
+
+        &--mobile {
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+
+            @include media-query(desktop-sm) {
+                display: none;
+            }
+        }
+
+        &--desktop {
+            display: none;
+
+            @include media-query(desktop-sm) {
+                display: block;
+                grid-column: span 2;
+                text-align: right;
+                margin: 0;
+                align-self: end;
+            }
+        }
+    }
+}
+
+.attribution {
+    font-family: $font-family;
+    font-size: 11px;
+    text-align: center;
+    padding: 1rem 0;
+
+    a { color: hsl(228, 45%, 44%); }
+}
