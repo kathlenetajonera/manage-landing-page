@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Manage Landing Page</title>
 
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
@@ -20,7 +20,7 @@
             <img class="navbar__logo" src="images/logo.svg" alt="Manage">
         </a>
 
-        <div class="navbar__toggle" role="button" aria-expanded="false">
+        <div class="navbar__toggle" role="button" aria-label="toggle button" aria-expanded="false">
             <span class="navbar__navicon navbar__navicon--top"></span>
             <span class="navbar__navicon navbar__navicon--middle"></span>
             <span class="navbar__navicon navbar__navicon--bottom"></span>
@@ -283,7 +283,7 @@
     
             <form action="#" class="form">
                 <div class="form__field">
-                    <input class="form__email" type="email" placeholder="Updates in your inbox…">
+                    <input class="form__email" type="email" placeholder="Updates in your inbox…" aria-label="email">
                     <p class="form__result"></p>
                 </div>
     
