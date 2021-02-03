@@ -88,6 +88,7 @@ body {
   font-family: "Be Vietnam", sans-serif;
   color: #242d52;
   margin: 0;
+  cursor: default;
   line-height: 3rem;
 }
 
@@ -127,6 +128,7 @@ body {
   font-size: 1rem;
   color: #9095a7;
   line-height: 1.7rem;
+  cursor: default;
 }
 
 @media (min-width: 64rem) {
@@ -597,6 +599,7 @@ body {
   font-family: "Be Vietnam", sans-serif;
   color: #242d52;
   margin: 0;
+  cursor: default;
   font-size: 0.95rem;
   display: inline-block;
   padding: .6rem;
@@ -640,6 +643,7 @@ body {
   font-size: 0.9rem;
   color: #9095a7;
   line-height: 1.7rem;
+  cursor: default;
 }
 
 @media (min-width: 48rem) {
@@ -745,6 +749,7 @@ body {
   font-family: "Be Vietnam", sans-serif;
   color: #242d52;
   margin: 0;
+  cursor: default;
 }
 
 .card__review {
@@ -752,6 +757,7 @@ body {
   font-size: 0.85rem;
   color: #9095a7;
   line-height: 1.7rem;
+  cursor: default;
 }
 
 @media (min-width: 48rem) {
@@ -946,6 +952,7 @@ body {
   font-size: 0.8rem;
   color: #9095a7;
   line-height: 1.7rem;
+  cursor: default;
 }
 
 .footer__copyright--mobile {

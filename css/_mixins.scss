@@ -21,6 +21,7 @@ $mediaBreakpoints: (
     font-family: $font-family;
     color: $darkBlue;
     margin: 0;
+    cursor: default;
 }
 
 @mixin body-text($font-size) {
@@ -28,6 +29,7 @@ $mediaBreakpoints: (
     font-size: $font-size;
     color: $darkGrayishBlue;
     line-height: 1.7rem;
+    cursor: default;
 }
 
 @mixin link-text($color) {

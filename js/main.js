@@ -181,3 +181,38 @@ function smoothScroll(target) {
 
     requestAnimationFrame(animation);
 }
+
+//mobile swipe
+
+let initialPosition = null;
+let currentPosition = null;
+
+const gestureTouch = (e) => initialPosition = e.touches[0].pageX;
+
+const gestureMove = (e) => currentPosition = e.touches[0].pageX;
+
+const gestureEnd = () => {
+    const difference = currentPosition - initialPosition;
+
+    if (difference < 0) { //swipe right
+        counter < 3 ? counter++ : counter = 0;
+        let selectedIndex = sliderIndicators[counter];
+
+        testiSlider.style.transform = `translateX(-${counter * testimonialCardWidth}%)`;
+        
+        updateIndicator(selectedIndex);
+    } else { //swipe left
+        counter > 0 ? counter-- : counter = 3;
+        let selectedIndex = sliderIndicators[counter];
+
+        testiSlider.style.transform = `translateX(-${counter * testimonialCardWidth}%)`;
+
+        updateIndicator(selectedIndex);
+    }
+}
+
+testiSlider.addEventListener("touchstart", gestureTouch);
+
+testiSlider.addEventListener("touchmove", gestureMove);
+
+testiSlider.addEventListener("touchend", gestureEnd);
